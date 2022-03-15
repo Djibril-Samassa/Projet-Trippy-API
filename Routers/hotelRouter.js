@@ -89,7 +89,7 @@ Router.post("/", (req,res) =>{
 	res.send(hotels)
 })
 
-/*Modifier coordonnées d'un hôtel*/
+/*Modifier le nom d'un hôtel*/
 Router.patch("/:id",(req,res) =>{
 	let id = hotels.find((ident) =>{
 		return ident.id.toString() === req.params.id;
@@ -98,6 +98,7 @@ Router.patch("/:id",(req,res) =>{
 	res.send(id)
 });
 
+/* Supprimer un hotel*/
 Router.delete("/:id",(req,res) =>{
 	id = req.params.id - 1;
 	hotels.splice(id, 1);
