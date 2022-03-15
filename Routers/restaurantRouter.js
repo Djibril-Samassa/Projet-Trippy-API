@@ -62,13 +62,18 @@ const restaurants = [
 /*Afficher la liste des restaurants*/
 Router.get("/", (req, res) =>{ 
 	/* Verifier si l'utilisateur cherche selon un critère*/
-		if(req.query = {}){
+		if(req.query === {}){
 			res.send(restaurants)
 		}
 		else{
-			
+			for (let elem = 0; elem < restaurants.length; elem++){
+				const search = req.query;
+				for (const property in search) {
+					console.log(`${search[property]}`);
+				  }
+			}
 		}
-	/* Chercher par catégorie de prix*/
+	
 
 })
 
